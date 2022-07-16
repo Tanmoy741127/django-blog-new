@@ -1,0 +1,99 @@
+{% load static %}
+
+<header id="header">
+    <nav>
+        <div class="logo">
+            <img src="{% static "blog/img/logo.png" %}" alt="">
+        </div>
+       
+        <ul class="main-nav-list">
+            {% with url_name=request.resolver_match.url_name %}
+            <li><a class="main-nav-link home {% if url_name == 'index' %}btn-cta{% endif %} " href="{% url "index" %}">home</a></li>
+            <li><a class="main-nav-link posts {% if url_name == 'posts' %}btn-cta{% endif %}" href="{% url "posts" %}">posts</a></li>
+            {% if user.is_authenticated %}
+            <li>
+                <p class="user-tag">{{request.user}}</p>
+                
+            </li>
+            <li>
+                <form action="/logout">
+                    {% csrf_token %}
+                    <button class="main-nav-link signup">logout</button>
+                </form>
+                
+            </li>
+            {% else %}
+            <li>
+                <button class="main-nav-link signup" id="signup">sign up</button>
+            </li>
+            <li><button class="main-nav-link login" id="login">login</button></li>
+            {% endif %}
+        
+            {% endwith %}
+        </ul>
+        <div class="burger">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-times hidden"></i>
+        </div>
+    </nav>
+    <div class="modal-window hidden" id="signup-modal">
+        <div class="signup-modal">
+            <button class="close-modal-btn" id="close-signup">&times;</button>
+            <h1>Sign Up</h1>
+            <p>Already Signed Up? <a href="">Login</a></p>
+            <form class="signup-form" action="/signup" method="POST">
+                {% csrf_token %}
+                <div class="input-field-signup">
+                    <label for="">Username</label>
+                    <input type="text" name="username" id="username" required>
+                </div>
+                <div class="input-field-signup">
+                    <label for="">Email</label>
+                    <input type="email" name="email" id="email" required>
+                </div>
+                <div class="input-field-signup">
+                    <label for="">Password</label>
+                    <input type="password" name="password" id="password" required>
+                </div>
+                <div class="input-field-signup">
+                    <label for="">Confirm Password</label>
+                    <input type="password" name="confirm-password" id="confirm-password" required>
+                </div>
+                <div class="input-field-signup">
+                    <button class="signup-login-btn" type="submit">Sign Up</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <div class="modal-window hidden" id="login-modal">
+        <div class="signup-modal">
+            <button class="close-modal-btn" id="close-login">&times;</button>
+            <h1>Login</h1>
+            <p>Not Signed Up? <a href="">Sign Up</a></p>
+            <form class="signup-form" action="/login" method="POST">
+                {% csrf_token %}
+                <div class="input-field-signup">
+                    <label for="">Username</label>
+                    <input type="text" name="login-username" id="login-username" required>
+                </div>
+
+                <div class="input-field-signup">
+                    <label for="">Password</label>
+                    <input type="password" name="login-password" id="login-password" required>
+                </div>
+
+                <div class="input-field-signup">
+                    <button class="signup-login-btn" type="submit">LOGIN</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    {% for message in messages  %}
+    <div class="alert">
+        <p>{{message}}</p>
+        <button id="close-alert">&times;</button>
+    </div>
+    {% endfor %}
+</header>

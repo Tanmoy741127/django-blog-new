@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} Multiversal Madness{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static "blog/style.css" %}">
+<link rel="stylesheet" href="{% static "blog/footer.css" %}">
+<link rel="stylesheet" href="{% static "blog/responsive.css" %}">
+<link rel="stylesheet" href="{% static "blog/modal.css" %}">
+{% endblock css %}
+
+{% block content %}
+
+<div class="backdrop overlay hidden"></div>
+{% include "blog/includes/header.html" %}
+<section id="home" class="hero--section">
+
+    <img src="{% static "blog/img/Untitled (1).png" %}" alt="">
+    <h2>MOVIES • MUSIC • SERIES </h2>
+    <button> <a href="#recent-posts" style="color: white;">SEE POSTS</a> </button>
+</section>
+<section class="recent-posts" id="recent-posts">
+    <h2>RECENT POSTS</h2>
+    <div class="recent-posts-container">
+        <div class="cards">
+           
+            {% for post in posts  %}
+            {% include "blog/includes/card.html" %}
+            {% endfor %}
+            
+
+
+        </div>
+    </div>
+</section>
+{% include "blog/includes/footer.html" %}
+
+<script src="{% static "blog/script.js" %}"></script>
+{% endblock content %}

@@ -1,0 +1,668 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: 1;
+    font-weight: 400;
+    list-style: none;
+    text-decoration: none;
+    overflow-x: hidden;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+
+/***************************************************************************************/
+
+
+/******************** HEADER AND NAVBAR ******************* */
+
+
+/***************************************************************************************/
+
+.hero--section {
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-color: #252525;
+    gap: 0vw;
+}
+
+.hero--section img {
+    width: 50%;
+}
+
+.hero--section h2 {
+    color: white;
+    font-family: "Nunito", sans-serif;
+    font-size: 2.4vw;
+}
+
+button {
+    margin-top: 2vw;
+    border: solid transparent;
+    color: white;
+    background-color: #D0021B;
+    padding: 1vw 2vw;
+    font-family: "Nunito Sans", sans-serif;
+    word-spacing: 5px;
+    letter-spacing: 3px;
+    font-weight: 500;
+    font-size: 1.2vw;
+}
+
+button:hover {
+    background-color: #940011;
+    transition: 0.3s;
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+header {
+    width: 100vw;
+    position: fixed;
+    z-index: 10;
+}
+
+nav {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 1vw 1.2vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #252525;
+}
+
+.logo img {
+    height: 3vw;
+}
+
+.main-nav-list {
+    display: flex;
+    gap: 1.6vw;
+    font-family: "Nunito Sans";
+    list-style: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 0 2vw;
+}
+
+.main-nav-link:visited,
+.main-nav-link:link {
+    display: inline-block;
+    color: #ffffff;
+    font-size: 0.8vw;
+    font-weight: 800;
+    letter-spacing: 3.2px;
+    line-height: 1.1;
+    padding: 0.7rem 1.4rem;
+    border: solid 2px transparent;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.main-nav-link:hover,
+.main-nav-link:active {
+    color: #D0021B;
+}
+
+.btn-cta:visited,
+.btn-cta:link {
+    color: #D0021B;
+    border-bottom: solid 2px #D0021B;
+}
+
+.btn-cta:hover,
+.btn-cta:active {
+    color: #D0021B;
+}
+
+
+/***************** BURGER MENU *********************/
+
+.burger {
+    display: none;
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+.burger div {
+    width: 2.5rem;
+    height: 0.3rem;
+    background-color: #fff;
+    margin: 5px;
+}
+
+.fa-bars {
+    color: white;
+    font-size: 8vw;
+    transition: all 0.5s;
+}
+
+.fa-times {
+    color: #fff;
+    font-size: 8vw;
+    transition: all 0.5s;
+}
+
+.backdrop {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.514);
+    transition: all 0.5s ease-in-out;
+}
+
+.recent-posts {
+    width: 100vw;
+    padding: 2vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.recent-posts h2 {
+    font-size: 2.2vw;
+    padding: 10px;
+    border-bottom: solid 3.5px #D0021B;
+    display: inline-block;
+}
+
+.recent-posts-container {
+    background-color: #fff;
+}
+
+.cards {
+    width: 100vw;
+    padding: 3vw 15vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3vw;
+}
+
+.card {
+    padding: 1.2vw;
+    border-radius: 0.4vw;
+    background-color: #252525;
+}
+
+.card:hover {
+    background-color: #000;
+    transition: 0.5s;
+}
+
+.card img {
+    height: 18vw;
+    width: 16vw;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card h2 {
+    font-size: 2.6vw;
+    font-family: "Roboto";
+    color: #D0021B;
+}
+
+.card-top {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 1.6vw;
+}
+
+.card-bottom {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a p {
+    letter-spacing: 1px;
+    line-height: 1.4;
+    font-size: 1vw;
+    text-decoration: none;
+    color: #fff;
+    max-height: 10vw;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+a {
+    list-style: none;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0.5vw;
+}
+
+a:hover {
+    list-style: none;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+a button {
+    margin-top: 2vw;
+    border: solid transparent;
+    color: white;
+    background-color: #D0021B;
+    padding: 1vw 2vw;
+    font-family: "Nunito Sans", sans-serif;
+    word-spacing: 5px;
+    letter-spacing: 3px;
+    font-weight: 500;
+    font-size: 1vw;
+    width: 25%;
+    align-content: flex-end;
+}
+
+button:hover {
+    background-color: #940011;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.signup,
+.login {
+    margin-top: 0;
+    padding: 0.7rem 1.4rem;
+    min-width: 100px;
+    text-transform: uppercase;
+    font-size: 0.8vw;
+    font-weight: 800;
+    letter-spacing: 3.2px;
+    line-height: 1.1;
+}
+
+.signup {
+    background-color: transparent;
+    border: solid 2px #D0021B;
+}
+
+.signup:hover {
+    color: #fff;
+    transform: none;
+    background-color: #D0021B;
+    transition: all 0.3s;
+}
+
+.login:hover {
+    transform: none;
+    color: white;
+}
+
+.modal-window {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.414);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-modal {
+    width: 30vw;
+    min-height: 35vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    color: #252525;
+    padding: 2vw;
+    position: relative;
+    border-radius: 0.3vw;
+}
+
+.signup-form {
+    width: 90%;
+}
+
+.input-field-signup {
+    /* border: solid 1px red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 6px;
+    margin-bottom: 1vw;
+}
+
+.input-field-signup label {
+    font-size: 1.2vw;
+    letter-spacing: 1px;
+    font-weight: 500;
+    color: #252525;
+    border-bottom: solid 2px #D0021B;
+    padding: 0.5rem;
+}
+
+.input-field-signup input {
+    width: 100%;
+    height: 2.5vw;
+    border: solid 1px #252525;
+    padding: 0.5rem;
+    letter-spacing: 1px;
+    font-size: 1.2vw;
+}
+
+.signup-login-btn {
+    margin-top: 0;
+    align-self: center;
+    width: 100%;
+}
+
+.close-modal-btn {
+    position: absolute;
+    top: -3%;
+    right: 0;
+    color: #252525;
+    background-color: transparent;
+    font-size: 3vw;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    padding: 0 0.5vw;
+}
+
+.close-modal-btn:hover {
+    color: #D0021B;
+    background-color: transparent;
+    transform: none;
+    transition: all 0.1s;
+}
+
+.alert {
+    width: 100vw;
+    padding: 1vw 3vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2vw;
+    background-color: white;
+}
+
+.alert p {
+    color: #252525;
+    width: 95%;
+    letter-spacing: 0.5px;
+    font-family: "Roboto", sans-serif;
+    line-height: 1.3;
+    font-size: 1.1vw;
+}
+
+#close-alert {
+    padding: 0vw 0.4vw;
+    margin-top: 0;
+    transform: none;
+    background-color: transparent;
+    color: #252525;
+    font-size: 3vw;
+}
+
+#close-alert:hover {
+    color: #D0021B;
+}
+
+.user-tag {
+    /* margin-top: 0;
+    padding: 0.7rem 1.4rem;
+    min-width: 100px;
+    text-transform: uppercase;
+    font-size: 1.4vw;
+    font-weight: 600;
+    letter-spacing: 3.2px;
+    line-height: 1.1;
+    font-family: sans-serif;
+    color: #D0021B; */
+    display: inline-block;
+    color: #D0021B;
+    font-size: 0.8vw;
+    font-weight: 800;
+    letter-spacing: 3.2px;
+    line-height: 1.1;
+    padding: 0.7rem 1.4rem;
+    border: solid 2px transparent;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.posts-height-fix {
+    height: 6vw;
+}
+
+.posts-height-fix {
+    height: 3vw;
+}
+
+@media screen and (max-width: 800px) {
+    /************************* HERO AND HEADER *************************************/
+    .main-nav-list {
+        position: absolute;
+        height: 100vh;
+        top: 0rem;
+        right: 0;
+        gap: 3vh;
+        background-color: #252525;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10vh;
+        width: 60%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in-out;
+        z-index: 10;
+    }
+    /* .main-nav-link {
+      opacity: 1;
+    } */
+    .burger {
+        display: block;
+        z-index: 10;
+    }
+    .nav-active {
+        transform: translateX(0%);
+    }
+    nav {
+        padding: 1.6vh;
+    }
+    header {
+        width: 100vw;
+        position: fixed;
+        z-index: 10;
+    }
+    .main-nav-link:visited,
+    .main-nav-link:link {
+        font-size: 1.8vh;
+        font-weight: 800;
+        letter-spacing: 3.2px;
+        line-height: 1.3;
+        padding: 0.7vh 1.4vh;
+    }
+    .hero--section {
+        height: 55vh;
+    }
+    .hero--section img {
+        width: 95%;
+    }
+    .hero--section h2 {
+        font-size: 5vw;
+    }
+    button {
+        margin-top: 5vw;
+        padding: 3vw 6vw;
+        font-size: 5vw;
+    }
+    button:hover {
+        background-color: #940011;
+        transition: 0.3s;
+        cursor: pointer;
+        transform: scale(1.05);
+    }
+    .logo img {
+        height: 9vw;
+    }
+    .recent-posts h2 {
+        font-size: 7vw;
+    }
+    .cards {
+        padding: 6vw;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 6vw;
+    }
+    .card {
+        padding: 3vw;
+        border-radius: 0.8vw;
+    }
+    .card:hover {
+        background-color: #000;
+        transition: 0.5s;
+    }
+    .card img {
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        height: 50vw;
+    }
+    .card-top {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.6vw;
+    }
+    .card h2 {
+        font-size: 7vw;
+    }
+    a p {
+        font-size: 3.2vw;
+        max-height: 25vw;
+    }
+    a button {
+        margin-top: 2vw;
+        padding: 2.5vw 6vw;
+        font-size: 6vw;
+        width: 100%;
+    }
+    .signup,
+    .login {
+        font-size: 1.8vh;
+        font-weight: 800;
+        letter-spacing: 3.2px;
+        line-height: 1.3;
+        padding: 0.7vh 1.4vh;
+    }
+    .signup-modal {
+        width: 80vw;
+        min-height: 60vh;
+        padding: 4vw;
+        border-radius: 0.6vw;
+    }
+    .input-field-signup {
+        gap: 4px;
+        margin-bottom: 2vw;
+    }
+    .input-field-signup label {
+        font-size: 5vw;
+        border-bottom: solid 2px #D0021B;
+        padding: 0.5rem;
+    }
+    .input-field-signup input {
+        height: 9vw;
+        padding: 2vw;
+        font-size: 5vw;
+    }
+    .signup-login-btn {
+        margin-top: 6vw;
+    }
+    .close-modal-btn {
+        font-size: 10vw;
+        padding: 0 3vw;
+    }
+    .alert {
+        width: 100vw;
+        padding: 1vw 3vw;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 2vw;
+        background-color: white;
+    }
+    .alert p {
+        color: #252525;
+        width: 95%;
+        letter-spacing: 0.5px;
+        font-family: "Roboto", sans-serif;
+        line-height: 1.3;
+    }
+    #close-alert {
+        padding: 0vw 0.4vw;
+        margin-top: 0;
+        transform: none;
+        background-color: transparent;
+        color: #252525;
+        font-size: 3vw;
+    }
+    #close-alert:hover {
+        color: #D0021B;
+    }
+    .user-tag {
+        font-size: 1.8vh;
+        font-weight: 800;
+        letter-spacing: 3.2px;
+        line-height: 1.3;
+        padding: 0.7vh 1.4vh;
+    }
+    .posts-height-fix {
+        height: 15vw;
+    }
+    .post-height-fix {
+        height: 8vw;
+    }
+}

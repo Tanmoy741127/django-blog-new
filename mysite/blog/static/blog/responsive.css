@@ -1,0 +1,193 @@
+@media screen and (max-width: 800px) {
+    /************************* HERO AND HEADER *************************************/
+    .main-nav-list {
+        position: absolute;
+        height: 100vh;
+        top: 0rem;
+        right: 0;
+        gap: 3vh;
+        background-color: #252525;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10vh;
+        width: 60%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in-out;
+        z-index: 10;
+    }
+    /* .main-nav-link {
+      opacity: 1;
+    } */
+    .burger {
+        display: block;
+        z-index: 10;
+    }
+    .nav-active {
+        transform: translateX(0%);
+    }
+    nav {
+        padding: 1.6vh;
+    }
+    header {
+        width: 100vw;
+        position: fixed;
+        z-index: 10;
+    }
+    .main-nav-link:visited,
+    .main-nav-link:link {
+        font-size: 1.8vh;
+        font-weight: 800;
+        letter-spacing: 3.2px;
+        line-height: 1.3;
+        padding: 0.7vh 1.4vh;
+    }
+    .hero--section {
+        height: 55vh;
+    }
+    .hero--section img {
+        width: 95%;
+    }
+    .hero--section h2 {
+        font-size: 5vw;
+    }
+    button {
+        margin-top: 5vw;
+        padding: 3vw 6vw;
+        font-size: 5vw;
+    }
+    button:hover {
+        background-color: #940011;
+        transition: 0.3s;
+        cursor: pointer;
+        transform: scale(1.05);
+    }
+    .logo img {
+        height: 9vw;
+    }
+    .recent-posts h2 {
+        font-size: 7vw;
+    }
+    .cards {
+        padding: 6vw;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 6vw;
+    }
+    .card {
+        padding: 3vw;
+        border-radius: 0.8vw;
+    }
+    .card:hover {
+        background-color: #000;
+        transition: 0.5s;
+    }
+    .card img {
+        height: 85vw;
+    }
+    .card h2 {
+        font-size: 7vw;
+    }
+    a p {
+        font-size: 3.2vw;
+        max-height: 25vw;
+    }
+    a button {
+        margin-top: 2vw;
+        padding: 2.5vw 6vw;
+        font-size: 6vw;
+    }
+    .signup,
+    .login {
+        font-size: 1.8vh;
+        font-weight: 800;
+        letter-spacing: 3.2px;
+        line-height: 1.3;
+        padding: 0.7vh 1.4vh;
+    }
+    .signup-modal {
+        width: 80vw;
+        min-height: 60vh;
+        padding: 4vw;
+        border-radius: 0.6vw;
+    }
+    .input-field-signup {
+        gap: 4px;
+        margin-bottom: 2vw;
+    }
+    .input-field-signup label {
+        font-size: 5vw;
+        border-bottom: solid 2px #D0021B;
+        padding: 0.5rem;
+    }
+    .input-field-signup input {
+        height: 9vw;
+        padding: 2vw;
+        font-size: 5vw;
+    }
+    .signup-login-btn {
+        margin-top: 6vw;
+    }
+    .close-modal-btn {
+        font-size: 10vw;
+        padding: 0 3vw;
+    }
+    .alert {
+        padding: 2.5vw 6vw;
+        gap: 4vw;
+    }
+    .alert p {
+        font-size: 4.5vw;
+    }
+    #close-alert {
+        padding: 0vw 1vw;
+        font-size: 4.5vw;
+    }
+    /************************* FOOTER *************************************/
+    .top {
+        width: 100%;
+        flex-direction: column;
+        gap: 4vw;
+        padding: 1.6vw 4vw;
+    }
+    .developed {
+        width: 100%;
+    }
+    .developed h2 {
+        font-size: 3.6vw;
+        margin-bottom: 1vw;
+    }
+    .dvlpd-comp {
+        gap: 2vw;
+        height: 8vw;
+    }
+    .dvlpd-comp img {
+        height: 8vw;
+        border-radius: 50%;
+    }
+    .dvlpd-comp h4 {
+        font-size: 4.5vw;
+        margin-bottom: 1vw;
+        transform: translateY(20%);
+    }
+    .social {
+        width: 100%;
+    }
+    .social h2 {
+        font-size: 4.2vw;
+        margin-bottom: 1.5vw;
+    }
+    .bottom {
+        padding: 1.5vw;
+    }
+    .bottom p {
+        font-size: 2.2vw;
+    }
+    .user-tag {
+        font-size: 1.8vh;
+        font-weight: 800;
+        letter-spacing: 3.2px;
+        line-height: 1.3;
+        padding: 0.7vh 1.4vh;
+    }
+}
